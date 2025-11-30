@@ -1,0 +1,18 @@
+api_version = "2025-04"
+
+[[extensions]]
+name = "Buy 2 get percent off"
+handle = "buy-2-get-percent-off"
+
+uid = "601460cb-56b4-73b6-0c0a-561ed25d70b1eaa7f264"
+
+type = "function"
+
+  [[extensions.targeting]]
+  target = "cart.lines.discounts.generate.run"
+  input_query = "src/cart_lines_discounts_generate_run.graphql"
+  export = "cart-lines-discounts-generate-run"
+
+  [extensions.build]
+  command = ""
+  path = "dist/function.wasm"

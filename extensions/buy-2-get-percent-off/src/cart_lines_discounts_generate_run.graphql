@@ -1,0 +1,19 @@
+query RunInput {
+  shop {
+    metafield(namespace: "volume_discount", key: "rules") {
+      jsonValue
+    }
+  }
+  cart {
+    lines {
+      id
+      quantity
+      merchandise {
+        __typename
+        ... on ProductVariant {
+          product { id }
+        }
+      }
+    }
+  }
+}
